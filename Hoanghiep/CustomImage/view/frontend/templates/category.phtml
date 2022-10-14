@@ -1,0 +1,34 @@
+<?php
+$category = $block->getEnableCategory();
+$currentCategory= $block->getCurrentCategory();
+$childrenCategorys=explode ( ',', $currentCategory->getChildren());
+// die(print_r($childrenCategorys));
+?>
+<h2 align="center">Category list</h2>
+<?php foreach ($category as $categorydata) : ?>
+    <?php
+    // echo $categorydata->getId();
+    foreach ($childrenCategorys as $child):
+        if($child==$categorydata->getId()){
+            $categoryid = $categorydata->getEntityId();
+            $categoryFactory = $block->getCategoryName($categoryid);
+            $categoryNameshow = $categoryFactory->getName();
+            $categoryUrlShow = $categoryFactory->getUrl();
+            $categoryImg = $categoryFactory->getCustomImage();
+            ?>
+            <div>
+                <a class="category-link-show" href="<?php echo $categoryUrlShow; ?>" alt="<?php echo $categoryNameshow; ?>"
+                title="<?php echo $categoryNameshow; ?>">
+                    <div class="category-show-cmspage">
+                        <div class="category-slide">
+                            <div class="category-name-show"><?php echo $categoryNameshow; ?></div>
+                            <?php if($categoryFactory->getIsLanding()){ ?>
+                                <div ><img src="<?php echo $categoryImg ?>" alt="<?php $categoryFactory ?>"></div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <?php } ?>
+    <?php endforeach; ?>
+<?php endforeach; ?>

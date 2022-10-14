@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/custom_attributes.xsd">
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="remove_checkout_billing_address_fields"
+                type="Hoanghiep\CustomImage\Plugin\Checkout\BillingAddressLayoutProcessor" sortOrder="1"/>
+    </type>
+</config>

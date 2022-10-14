@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * helloworld_index_lists
+ *
+ * @copyright Copyright © 2020 Hoanghiep. All rights reserved.
+ * @author    info@Hoanghiep.com
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Hoanghiep_Helloworld::css/style.css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Hoanghiep\Helloworld\Block\Posts" name="Hoanghiep.helloworld.posts" template="Hoanghiep_Helloworld::items.phtml" />
+        </referenceContainer>
+    </body>
+</page>
